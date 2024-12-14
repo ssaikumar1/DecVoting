@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "DeVoting_backend": {
+      "main": "src/DeVoting_backend/main.mo",
+      "type": "motoko"
+    },
+    "DeVoting_frontend": {
+      "dependencies": [
+        "DeVoting_backend"
+      ],
+      "source": [
+        "src/DeVoting_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "DeVoting_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
