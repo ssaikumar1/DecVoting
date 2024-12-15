@@ -17,6 +17,14 @@
     "@dfinity/candid": "^1.4.0",
     "@dfinity/principal": "^1.4.0"
   },
+  "resolutions": {
+  "react": "18.2.0",
+  "react-dom": "18.2.0"
+},
+"overrides": {
+  "react": "18.2.0",
+  "react-dom": "18.2.0"
+},
   "devDependencies": {
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",

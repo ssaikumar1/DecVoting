@@ -1,31 +1,27 @@
-import { useState } from 'react';
-import { DeVoting_backend } from 'declarations/DeVoting_backend';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './index.scss';
+import VoteForm from './components/VoteForm';
+import Result from './components/Result';
+import Vote from './components/Vote';
+import Home from './Page';
+
+
+
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    DeVoting_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/voting-form" element={<VoteForm />} />
+        <Route path="/vote" element={<Vote />} />
+        <Route path="/result" element={<Result />} />
+      
+      </Routes>
+    </Router>
   );
 }
+
 
 export default App;
